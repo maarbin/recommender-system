@@ -11,7 +11,8 @@ A recommendation system project using the MovieLens dataset. Currently focused o
 - **Python**: 3.12
 - **Package Manager**: UV (uses `uv.lock` for reproducibility)
 - **Core Libraries**: pandas, numpy, scikit-learn, matplotlib, seaborn
-- **Infrastructure**: Docker Compose with PostgreSQL 16, Apache Spark 4.1.0, and Next.js
+- **Infrastructure**: Docker Compose with PostgreSQL 16, Apache Spark 4.1.0, FastAPI, and Next.js
+- **API**: FastAPI with uvicorn
 - **Web**: Next.js with TypeScript
 
 ## Commands
@@ -31,6 +32,9 @@ uv run python main.py
 
 # Start Jupyter Lab
 uv run jupyter lab
+
+# Run API locally
+uv run uvicorn api.main:app --reload
 ```
 
 ## Infrastructure
@@ -38,13 +42,14 @@ uv run jupyter lab
 - **PostgreSQL**: port 5432, credentials `recommender`/`recommender`, database `recommender`
 - **Spark Master**: UI at http://localhost:8080, master port 7077
 - **Spark Worker**: 2GB memory, 2 cores
+- **API**: http://localhost:8000 (FastAPI, docs at /docs)
 - **Web**: http://localhost:3000 (Next.js dev server)
 
 ## Project Structure
 
 ```
 recommender-system/
-├── api/           # API layer (planned)
+├── api/           # FastAPI backend
 ├── data/          # Data storage (raw/processed)
 ├── notebooks/     # Jupyter notebooks for exploration
 ├── web/           # Next.js web interface

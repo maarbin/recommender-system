@@ -72,6 +72,7 @@ brew install uv
    - **PostgreSQL** on port 5432
    - **Spark Master** UI on http://localhost:8080
    - **Spark Worker** connected to master
+   - **API (FastAPI)** on http://localhost:8000
    - **Web (Next.js)** on http://localhost:3000
 
 4. Stop services when done:
@@ -85,6 +86,16 @@ Run the main application:
 
 ```bash
 uv run python main.py
+```
+
+## API
+
+The API uses FastAPI. Access the interactive documentation at http://localhost:8000/docs when the containers are running.
+
+Run locally without Docker:
+
+```bash
+uv run uvicorn api.main:app --reload
 ```
 
 ## Web Application
