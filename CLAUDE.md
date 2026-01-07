@@ -4,14 +4,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A recommendation system project in early development stage. Currently focused on data exploration via Jupyter notebooks with planned API and web components.
+A recommendation system project using the MovieLens dataset. Currently focused on data exploration via Jupyter notebooks with planned API and web components.
 
 ## Tech Stack
 
 - **Python**: 3.12
 - **Package Manager**: UV (uses `uv.lock` for reproducibility)
 - **Core Libraries**: pandas, numpy, scikit-learn, matplotlib, seaborn
-- **Interactive Development**: Jupyter/JupyterLab
+- **Infrastructure**: Docker Compose with PostgreSQL 16 and Apache Spark 4.1.0
 
 ## Commands
 
@@ -19,15 +19,24 @@ A recommendation system project in early development stage. Currently focused on
 # Install dependencies
 uv sync
 
+# Start infrastructure (PostgreSQL, Spark)
+docker-compose up -d
+
+# Stop infrastructure
+docker-compose down
+
 # Run main entry point
 uv run python main.py
 
 # Start Jupyter Lab
 uv run jupyter lab
-
-# Run a specific notebook
-uv run jupyter execute notebooks/start.ipynb
 ```
+
+## Infrastructure
+
+- **PostgreSQL**: port 5432, credentials `recommender`/`recommender`, database `recommender`
+- **Spark Master**: UI at http://localhost:8080, master port 7077
+- **Spark Worker**: 2GB memory, 2 cores
 
 ## Project Structure
 
