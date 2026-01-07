@@ -7,6 +7,26 @@ A recommendation system project using the MovieLens dataset.
 - Python 3.12+
 - [UV](https://docs.astral.sh/uv/) package manager
 
+### Installing UV
+
+**macOS / Linux:**
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+**Windows (PowerShell):**
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+**Homebrew (macOS/Linux):**
+
+```bash
+brew install uv
+```
+
 ## Setup
 
 1. Clone the repository:
